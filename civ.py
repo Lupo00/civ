@@ -14,11 +14,12 @@ else:
 
 # "constants"
 F = 10**-7 #F - CHANGE THE NUMBER TO TERM OF "lat" and "lon"
+cm = 10**2
 t_cords = (-35.3632296, 149.1652651) #target cords
 
 
 def calc_dis(cords1,cords2):
-    return calculator.vincenty(cords1, cords2).m
+    return (calculator.vincenty(cords1, cords2).m)*cm
 
 def point_to_cords(point):
     return (point["lat"]*F,point["lon"]*F)
